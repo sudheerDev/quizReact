@@ -3,7 +3,7 @@ import request from 'utils/request';
 import { saveQuestions } from './actions';
 // Individual exports for testing
 export function* defaultSaga() {
-  const questions = yield call(request, 'https://api.myjson.com/bins/1aksu7');
+  const questions = yield call(request, 'https://api.myjson.com/bins/qlziv');
   yield put(saveQuestions(questions));
 }
 

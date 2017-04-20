@@ -26,7 +26,6 @@ const makeCorrectAnswers = createSelector(
     let test;
     if (answers) {
       test = questions.get('questions').reduce((newList, val, index) => {
-        // console.log(val.get('answerNum'), parseInt(answers[index], 10));
         if (parseInt(val.get('answerNum'), 10) === answers[index]) {
           return newList + 1;
         }

@@ -4,7 +4,7 @@ import { saveAnswers } from './actions';
 
 // Individual exports for testing
 export function* defaultSaga() {
-  const answers = yield call(request, 'https://api.myjson.com/bins/an3jb');
+  const answers = yield call(request, 'https://api.myjson.com/bins/192f9z');
   yield put(saveAnswers(answers));
 }
 

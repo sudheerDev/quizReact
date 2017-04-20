@@ -12,6 +12,7 @@ import Qa from 'components/Qa';
 import { push } from 'react-router-redux';
 import styled from 'styled-components';
 import makeSelectUserName from 'containers/HomePage/selectors';
+import Loader from 'components/Loader';
 import { makeSelectQuestions, makeSelectQuestionNum, makeSelectQuizStatus } from './selectors';
 import { defaultSaga } from './sagas';
 import { savePresentQuestionNum, saveAnswer, quizCompleted } from './actions';
@@ -71,7 +72,7 @@ export class Quiz extends React.PureComponent {
   }
 
   questionHeader() {
-    return <QuestionHeader>Question {this.props.questionNum} of 5</QuestionHeader>;
+    return <QuestionHeader>Question {this.props.questionNum + 1} of 5</QuestionHeader>;
   }
 
   saveAnswer(event) {
@@ -90,7 +91,7 @@ export class Quiz extends React.PureComponent {
   }
 
   PreviousButton() {
-    return <NavButton click={this.prevQuestionNum} disabled={this.props.questionNum === 1} text={'Previous'}></NavButton>;
+    return <NavButton click={this.prevQuestionNum} disabled={this.props.questionNum === 0} text={'Previous'}></NavButton>;
   }
 
   render() {
@@ -109,7 +110,7 @@ export class Quiz extends React.PureComponent {
       );
     } else {
       container = (
-        <p>Loading</p>
+        <Loader></Loader>
       );
     }
     return (

@@ -21,7 +21,7 @@ const makeSelectQuestions = createSelector(
 
 const makeSelectQuestionNum = createSelector(
   selectQuizDomain(),
-  (substate) => substate.get('presentQuestionNum')
+  (substate) => substate.get('presentQuestionIndex')
 );
 
 const makeSelectQuizStatus = createSelector(

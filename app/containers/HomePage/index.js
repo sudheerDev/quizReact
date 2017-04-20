@@ -11,9 +11,7 @@
 
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
 import LoginForm from 'components/LoginForm';
-import messages from './messages';
 import makeSelectUserName from './selectors';
 import { saveUserName } from './actions';
 

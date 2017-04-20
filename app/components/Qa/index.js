@@ -19,7 +19,7 @@ class Qa extends React.PureComponent { // eslint-disable-line react/prefer-state
     return this.props.question.get('options').valueSeq().map((option, index) => (
       <QaDiv className="radio" key={index}>
         <label htmlFor={index} style={{ display: 'block' }}>
-          <input type="radio" id={index} onChange={this.props.saveAnswer} value={index} checked={parseInt(this.props.question.get('answerNum'), 10) === index} />
+          <input type="radio" id={index} onChange={this.props.saveAnswer} value={index + 1} checked={parseInt(this.props.question.get('answerNum'), 10) === index + 1} />
           <span>{option}</span>
         </label>
       </QaDiv>)

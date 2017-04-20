@@ -14,7 +14,7 @@ import {
 } from './constants';
 
 const initialState = fromJS({
-  presentQuestionNum: 1,
+  presentQuestionIndex: 0,
 });
 
 function quizReducer(state = initialState, action) {
@@ -24,7 +24,7 @@ function quizReducer(state = initialState, action) {
     case SAVE_QUESTIONS:
       return state.set('questions', fromJS(action.questions));
     case SAVE_QUESTION_NUM:
-      return state.update('presentQuestionNum', (number) => number + action.value);
+      return state.update('presentQuestionIndex', (number) => number + action.value);
     case SAVE_ANSWER:
       return state.setIn(['questions', action.questionNum, 'answerNum'], action.answerNum);
     case QUIZ_COMPLETED:

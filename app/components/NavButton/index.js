@@ -27,7 +27,7 @@ NavButton.propTypes = {
   click: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
-  float: PropTypes.bool,
+  float: PropTypes.string,
 };
 
 export default NavButton;
